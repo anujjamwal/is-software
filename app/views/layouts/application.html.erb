@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IsSoftware</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="header">
+  <div id="logged_in_user">
+    <span>Logged in as:</span>
+		<span> <%= @current_user.emp_id %></span>
+</div>
+</div>
+<%= yield %>
+
+</body>
+</html>

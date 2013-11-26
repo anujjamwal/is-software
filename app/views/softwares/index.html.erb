@@ -1,0 +1,37 @@
+<h1>Listing softwares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Operating system</th>
+      <th>Description</th>
+      <th>Download count</th>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @softwares.each do |software| %>
+      <tr>
+        <td><%= software.name %></td>
+        <td><%= software.url %></td>
+        <td><%= software.operating_system_id %></td>
+        <td><%= software.description %></td>
+        <td><%= software.download_count %></td>
+        <td><%= software.state_id %></td>
+        <td><%= link_to 'Show', software %></td>
+        <td><%= link_to 'Edit', edit_software_path(software) %></td>
+        <td><%= link_to 'Destroy', software, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Software', new_software_path %>

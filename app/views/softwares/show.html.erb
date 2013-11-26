@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @software.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @software.url %>
+</p>
+
+<p>
+  <strong>Operating system:</strong>
+  <%= @software.operating_system.name %>
+</p>
+
+<p>
+  <strong>Freeware:</strong>
+  <%= @software.freeware ? 'Yes' : 'No'  %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @software.description %>
+</p>
+
+<p>
+  <strong>Download count:</strong>
+  <%= @software.download_count %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @software.state.name %>
+</p>
+<p>
+  <strong>Added By:</strong>
+  <%= @software.user.emp_id  %>
+</p>
+
+<%= link_to 'Edit', edit_software_path(@software) %> |
+<%= link_to 'Back', softwares_path %>
+
+<%= form_for  @software.allocations.build, :url => allocation_software_path(@software) do |f| %>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+    <span>Enter employee Ad Id</span>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
