@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Url:</strong>
-  <%= @software.url %>
+  <strong>Path:</strong>
+  <%= @software.path %>
 </p>
 
 <p>
@@ -41,15 +41,4 @@
 
 <%= link_to 'Edit', edit_software_path(@software) %> |
 <%= link_to 'Back', softwares_path %>
-
-<%= form_for  @software.allocations.build, :url => allocation_software_path(@software) do |f| %>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-    <span>Enter employee Ad Id</span>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
+<%= render partial: 'allocations/form' %>

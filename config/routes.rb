@@ -1,9 +1,11 @@
 IsSoftware::Application.routes.draw do
   resources :softwares do
-    member do
-      post 'allocation' => 'softwares#allocate'
-    end
+    resources :allocations, only: [:create]
   end
+  
+  resources :downloads, only: [:show]
+
+  get 'not_found' => 'application#not_found'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

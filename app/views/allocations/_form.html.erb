@@ -1,0 +1,10 @@
+<%= form_for  [@software, @software.allocations.build] do |f| %>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+    <span>Enter employee Ad Id</span>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

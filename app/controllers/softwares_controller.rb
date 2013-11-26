@@ -17,9 +17,7 @@ class SoftwaresController < ApplicationController
 
   def create
     @software = Software.new(software_params)
-    @software.state = State.active
-    @software.user = @current_user
-    @software.download_count = 0
+
     respond_to do |format|
       if @software.save
         format.html { redirect_to @software, notice: 'Software was successfully created.' }
@@ -51,18 +49,12 @@ class SoftwaresController < ApplicationController
     end
   end
 
-  def allocate
-    @user = User.where(emp_id: params[:allocation][:user_id]).first_or_create 
-    @allocation = @software.allocations.build(user: @user, allocator: @current_user)
-    @allocation.save!
-  end
-
   private
   def set_software
     @software = Software.find(params[:id])
   end
 
   def software_params
-    params.require(:software).permit(:name, :url, :operating_system_id, :description, :freeware)
+    params.require(:software).permit(:name, :path, :operating_system_id, :description, :freeware)
   end
 end

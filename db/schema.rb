@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126070523) do
+ActiveRecord::Schema.define(version: 20131126181649) do
 
   create_table "allocations", force: true do |t|
     t.integer  "software_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20131126070523) do
     t.integer  "allocator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "download_count"
   end
 
   create_table "operating_systems", force: true do |t|
@@ -33,7 +34,7 @@ ActiveRecord::Schema.define(version: 20131126070523) do
 
   create_table "softwares", force: true do |t|
     t.string   "name"
-    t.string   "url"
+    t.string   "path"
     t.integer  "operating_system_id"
     t.text     "description"
     t.integer  "download_count"
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20131126070523) do
     t.string   "emp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
 end

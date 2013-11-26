@@ -8,3 +8,6 @@
 OperatingSystem.create(name: 'Windows 8.1')
 OperatingSystem.create(name: 'Mac 10.8.3')
 OperatingSystem.create(name: 'Ubuntu 12.04')
+user = User.where(emp_id: 'anujjam').first_or_create
+user.role = 'admin'
+user.save!
