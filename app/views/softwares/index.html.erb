@@ -4,8 +4,10 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Url</th>
+      <th>Path</th>
+      <th>Link</th>
       <th>Operating system</th>
+      <th>Type</th>
       <th>Description</th>
       <th>Download count</th>
       <th>State</th>
@@ -19,11 +21,13 @@
     <% @softwares.each do |software| %>
       <tr>
         <td><%= software.name %></td>
-        <td><%= software.url %></td>
+        <td><%= software.path %></td>
+        <td><%= software_download_link(software) %></td>
         <td><%= software.operating_system_id %></td>
+		<td><%= software.freeware? ? 'Freeware' : 'Paid License' %></td>
         <td><%= software.description %></td>
         <td><%= software.download_count %></td>
-        <td><%= software.state_id %></td>
+        <td><%= software.state.name %></td>
         <td><%= link_to 'Show', software %></td>
         <td><%= link_to 'Edit', edit_software_path(software) %></td>
         <td><%= link_to 'Destroy', software, method: :delete, data: { confirm: 'Are you sure?' } %></td>

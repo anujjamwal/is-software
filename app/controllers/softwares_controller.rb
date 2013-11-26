@@ -17,6 +17,7 @@ class SoftwaresController < ApplicationController
 
   def create
     @software = Software.new(software_params)
+    @software.user = @current_user
 
     respond_to do |format|
       if @software.save
