@@ -12,4 +12,22 @@
 *= require_self
 *= require_tree .
 */
+.wrap{
+  word-wrap: break-word;
+}
 
+body{
+  background-color: #E5E5E5 !important;
+}
+
+
+.layout{
+  width: 80%;
+  margin-left: 10%;
+  border: 2px;
+  background-color: rgb(143, 139, 51);
+}
+
+.logo-width{
+  width: 40%;
+}

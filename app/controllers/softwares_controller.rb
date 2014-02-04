@@ -2,7 +2,7 @@ class SoftwaresController < ApplicationController
   before_action :set_software, only: [:show, :edit, :update, :destroy, :allocate]
 
   def index
-    @softwares = Software.all
+    @softwares = Software.find_all_by_operating_system_id(params[:OSId])
   end
 
   def show

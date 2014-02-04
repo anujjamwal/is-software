@@ -1,3 +1,124 @@
 // Place all the styles related to the softwares controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#new_software {
+    outline: 1px solid green;
+    width: 50%;
+    align: center; 
+}
+
+.header {
+         width: 100%;
+         height: 30%;
+         h1{
+         color: white;
+         }
+       }
+#logged_in_user{
+         color: white;
+         text-align: right;
+         padding-top: 40px;
+         }
+
+.info {
+    background-color: black;
+    color: white;
+}
+
+
+#new-software{
+  color: white;
+  margin-right: 10%;
+  //text-align: right;
+//  padding-top: 40px;
+}
+
+
+.nav li{
+  a:hover {
+    background: black;
+  }
+  a:active {
+  background: blue;
+  }
+}
+
+.navbar{
+  margin-top: 5%;
+  width: 96%;
+  margin-left: 2%;
+}
+
+.nav-border{
+  border: 2px solid !important;
+  border-color: black;
+}
+
+table {
+   table-layout: fixed;
+   //margin-left: 10%; 
+    width: 97% !important;
+    margin-left: 17px;
+     }
+ table th, table td { overflow: hidden; }
+
+ .cell-name{
+    width: 10%;
+ }
+
+ .cell-path{
+    width: 15%%;
+ }
+
+ .cell-link{
+    width: 20%;
+ }
+
+ .cell-type{
+    width: 10%;
+ }
+
+ .cell-descritpion{
+    width: 15%;
+ }
+
+ .cell-count{
+    width: 10%;
+ }
+
+ .cell-state{
+    width: 5%;
+ }
+
+ .cell-show{
+    width: 5%;
+ }
+
+ .cell-edit{
+    width: 4%;
+ }
+
+ .cell-destroy{
+    width: 6%;
+ }
+
+ .img_width{
+    width: 100%;
+ }
+
+ .os-area{
+    border:2px solid;
+border-radius:25px;
+margin-top: 2%;
+ }
+
+ .img-os-width{
+margin-left: 60%;
+ margin-top: 4%;
+margin-bottom: 4%;
+width: 60%;
+ }
+
+
