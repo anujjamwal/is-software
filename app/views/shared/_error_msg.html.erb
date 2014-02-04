@@ -1,0 +1,17 @@
+<% if object && object.errors.size > 0 %>
+    <div class="alert alert-error">
+      <p><%= t('error_messages.message') %></p>
+      <ul>
+        <% object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<% unless flash[:alert].blank? %>
+    <div class="alert alert-error">
+      <%= flash[:alert] %>
+    </div>
+    <% flash[:alert] = nil%>
+<% end %>
