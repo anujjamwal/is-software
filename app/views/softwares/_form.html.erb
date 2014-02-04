@@ -1,37 +1,44 @@
-<%= form_for(@software) do |f| %>
-  <% if @software.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@software.errors.count, "error") %> prohibited this software from being saved:</h2>
 
-      <ul>
-      <% @software.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= error_messages_for(@software) %>
+<%= form_for @software do |f| %>
+<div class="container"> 
+  <div class="form-group row">
+    <%= f.label :name , class: "col-lg-2"%><br>
+  <div class="col-lg-4">
+    <%= f.text_field :name, {class: "form-control"} %>
+   </div> 
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group row">
+    <%= f.label :path, class: "col-lg-2" %><br>
+    <div class="col-lg-4">
+    <%= f.text_field :path, {class: "form-control"} %>
   </div>
-  <div class="field">
-    <%= f.label :path %><br>
-    <%= f.text_field :path %>
   </div>
-  <div class="field">
-    <%= f.label :operating_system_id %><br>
-    <%= f.collection_select :operating_system_id, OperatingSystem.all, :id, :name %>
+
+  <div class="form-group row">
+    <%= f.label :operating_system_id, class: "col-lg-2" %><br>
+    <div class="col-lg-4">
+    <%= f.collection_select :operating_system_id, OperatingSystem.all, :id, :name, {class: "form-control"} %>
   </div>
-  <div class="field">
-    <%= f.label :freeware %><br>
-    <%= f.check_box :freeware %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+
+  <div class="form-group row">
+    <%= f.label :freeware, class: "col-lg-2" %><br>
+    <div class="col-lg-4">
+    <%= f.check_box :freeware%>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :description, class: "col-lg-2" %><br>
+    <div class="col-lg-4">
+    <%= f.text_area :description, {class: "form-control"} %>
+  </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.submit%>
+  </div>
   </div>
 <% end %>

@@ -46,8 +46,7 @@
       <tr>
         <td><%= software.name %></td>
         <td><%= software.path %></td>
-        <td><%= software_download_link(software) %></td>
-        <td><%= software.operating_system_id %></td>
+        <td class='wrap'><%= software_download_link(software) %></td>
 		<td><%= software.freeware? ? 'Freeware' : 'Paid License' %></td>
         <td><%= software.description %></td>
         <td><%= software.download_count %></td>
