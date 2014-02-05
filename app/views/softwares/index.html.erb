@@ -33,6 +33,7 @@
       <th class="cell-link">Link</th>
       <th class="cell-type">Type</th>
       <th class="cell-descritpion">Description</th>
+      <th class="cell-operating-system">Operating System</th>
       <th class="cell-count">Download count</th>
       <th class="cell-state">State</th>
       <th class="cell-show"></th>
@@ -49,6 +50,7 @@
         <td class='wrap'><%= software_download_link(software) %></td>
 		<td><%= software.freeware? ? 'Freeware' : 'Paid License' %></td>
         <td><%= software.description %></td>
+        <td><%= OperatingSystem.find(software.operating_system_id).name%></td>
         <td><%= software.download_count %></td>
         <td><%= software.state.name %></td>
         <td><%= link_to 'Show', software %></td>

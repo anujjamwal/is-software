@@ -1,11 +1,16 @@
 
-  <%= image_tag("tw-image1.jpg", class: "img_width") %>
-<div class="os-area">
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-  <%=link_to image_tag("windows3.jpg", class: "img-os-width img-circle"), softwares_path(:OSId => '1')%>
+<div class="header row clearfix">
+  <div class="logo clearfix col-lg-8">
+    <%= image_tag('thoughtworks-logo.png', class: "logo") %>
   </div>
-  <div class="col-xs-6 col-md-3"><%= image_tag("mac2.jpg", class: "img-os-width img-circle") %></div>
-  <div class="col-xs-6 col-md-3"><%= image_tag("ios.jpg", class: "img-os-width img-circle") %></div>
+  <div id="logged_in_user" class="col-lg-4">Ruchi Mutneja<%#= @current_user.emp_id %></div>
 </div>
+
+<div class="form-container">
+  <%= form_tag softwares_path, method: :get do %>
+    <%= text_field_tag :software_name, params['software_name'] %>
+    <%= collection_select(:software, :operating_system_id, OperatingSystem.order('name'), :id, :name, {prompt: "select operating system"}) %><br><br>
+     <%= submit_tag "search" %>
+  <%- end %>
+     
 </div>

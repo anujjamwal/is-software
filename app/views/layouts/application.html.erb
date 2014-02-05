@@ -3,26 +3,13 @@
 <div class="layout">
 <head>
   <title>IsSoftware</title>
-  <div class="header row clearfix">
-  <div class="logo clearfix col-lg-8">
-    <%= image_tag('thoughtworks-logo.png', class: "logo-width") %>
-  </div>
-  <div id="logged_in_user" class="col-lg-4">Ruchi Mutneja<%#= @current_user.emp_id %></div>
-  <!-- <h1><#%= t('application.title') %></h1> -->
-</div>
+  
 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
- <%#= image_tag("tw-image1.jpg", class: "body-background") %>
-
-<!-- <div class="header row"> -->
-      <!-- <div  class="col-lg-8"><h1> Thoughtworks </h1></div> -->
-    <!-- <div id="logged_in_user" class="col-lg-4">Ruchi Mutneja<%#= @current_user.emp_id %></div>  -->
-<!-- </div> -->
 
 <%= yield %>
 </body>
