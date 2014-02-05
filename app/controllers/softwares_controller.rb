@@ -48,7 +48,9 @@ class SoftwaresController < ApplicationController
       format.html { redirect_to softwares_url }
       format.json { head :no_content }
     end
+    @software.save
   end
+
 
   private
   def set_software
