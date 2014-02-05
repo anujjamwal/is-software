@@ -17,6 +17,16 @@ class Software < ActiveRecord::Base
     self.allocations.first.hash_code if freeware?
   end
 
+  def self.search software_name, operating_system_id
+    if !software_name.empty? && !operating_system_id.empty?
+    self.find_all_by_name_and_operating_system_id(software_name, operating_system_id)
+  elsif software_name.empty? 
+    self.find_all_by_operating_system_id(operating_system_id)
+    else
+    self.find_all_by_name(software_name)
+    end 
+  end
+
   private
   def setup_defaults
     self.state ||= State.active
